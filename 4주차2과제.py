@@ -1,12 +1,15 @@
-student = []
+nickSet = {'수선화',"코스모스",'들국화'}
+userNickname = input("원하는 닉네임을 입력하세요: ")
 
-for i in range(3):
-    name = input(f"{i+1}번 학생의 이름: ")
-    stu_num = input(f"{i+1}번 학생의 학번: ")
-    phone = input(f"{i+1}번 학생의 전화번호: ")
+while True:
     
-    student.append({"이름": name, "학번": stu_num, "전화번호": phone})
+    if userNickname in nickSet:
+        print("이미 사용 중입니다. 다시 입력해 주세요.")
+        userNickname = input("원하는 닉네임을 입력하세요: ")
 
-for i in range(3):
-    print("\n",f"{i+1}번 학생 정보")
-    print(student[i])
+    else:
+        print("사용 가능합니다. 닉네임으로 등록합니다.")
+        nickSet.add(userNickname)
+        break
+
+print("사용 중인 닉네임:", nickSet)
